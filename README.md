@@ -51,18 +51,12 @@ constants from compiled code.
 
 ### Prerequisites
 
-- Quarkus 999-SNAPSHOT built locally (`mvnw install -DskipTests -Dquickly`)
 - GraalVM CE or Mandrel with native image layer support
 
 ### Steps
 
 ```bash
-# 1. Build the Quarkus getting-started app (non-layered)
-cd getting-started
-./mvnw package -Dnative -DskipTests
-cd ..
-
-# 2. Run the layered build (this script)
+# 1. Run the layered build (this script)
 export JAVA_HOME=/path/to/graalvm
 reproducer-methodtype-interning/build.sh
 ```
