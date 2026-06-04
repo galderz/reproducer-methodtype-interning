@@ -4,14 +4,8 @@ set -eux
 JAVA_HOME="${JAVA_HOME:?Set JAVA_HOME to a GraalVM/Mandrel installation}"
 native_image="$JAVA_HOME/bin/native-image"
 
-source_jar_dir=getting-started/target/getting-started-1.0.0-SNAPSHOT-native-image-source-jar
+source_jar_dir=.
 lib="${source_jar_dir}/lib"
-
-if [ ! -d "$lib" ]; then
-    echo "ERROR: Run the non-layered build first:"
-    echo "  cd getting-started && ./mvnw package -Dnative -DskipTests"
-    exit 1
-fi
 
 mkdir -p target
 
