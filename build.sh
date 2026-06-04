@@ -66,7 +66,6 @@ echo "=== Building base layer (netty + essential Quarkus jars) ==="
     --initialize-at-run-time=io.netty.util.NetUtilSubstitutions\$NetUtilLocalhost6LazyHolder \
     --initialize-at-run-time=io.netty.util.NetUtilSubstitutions\$NetUtilLocalhostLazyHolder \
     --initialize-at-run-time=io.quarkus.netty.runtime.EmptyByteBufStub \
-    --initialize-at-run-time=io.quarkus.runtime.ExecutorRecorder \
     --initialize-at-run-time=io.quarkus.runtime.graal.InetRunTime \
     --initialize-at-run-time=io.smallrye.common.net.HostName \
     --initialize-at-run-time=io.smallrye.common.os.Process \
@@ -83,10 +82,10 @@ echo "=== Building base layer (netty + essential Quarkus jars) ==="
         ${lib}/io.netty.*.jar \
         ${lib}/modified-io.netty.*.jar \
         ${lib}/com.aayushatharva.brotli4j.*.jar \
-        ${lib}/io.quarkus.quarkus-core-*.jar \
-        ${lib}/io.quarkus.quarkus-netty-*.jar \
-        ${lib}/io.quarkus.quarkus-bootstrap-runner-*.jar \
-        ${lib}/io.quarkus.quarkus-classloader-commons-*.jar \
+        ${lib}/io.quarkus.quarkus-core-999-SNAPSHOT.jar \
+        ${lib}/io.quarkus.quarkus-netty-999-SNAPSHOT.jar \
+        ${lib}/io.quarkus.quarkus-bootstrap-runner-999-SNAPSHOT.jar \
+        ${lib}/io.quarkus.quarkus-classloader-commons-999-SNAPSHOT.jar \
         ${lib}/io.smallrye.common.smallrye-common-*.jar \
         ${lib}/io.smallrye.config.smallrye-config-core-*.jar \
         ${lib}/io.smallrye.config.smallrye-config-common-*.jar \
@@ -96,7 +95,6 @@ echo "=== Building base layer (netty + essential Quarkus jars) ==="
         ${lib}/org.slf4j.slf4j-api-*.jar \
         ${lib}/org.wildfly.common.wildfly-common-*.jar \
         ${lib}/org.eclipse.microprofile.config.microprofile-config-api-*.jar \
-        ${source_jar_dir}/getting-started-1.0.0-SNAPSHOT-runner.jar \
         | tr ' ' ':') \
     -o libnettybaselayer -H:Path=./target
 
